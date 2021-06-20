@@ -16,8 +16,6 @@ yarn add proto-tailwindcss-clrs
 
 Add the plugin in your `tailwind.config.js`.
 
-## Options Available
-Pass along a number value to generate that many font sizes.
 
 ```js
 // tailwind.config.js
