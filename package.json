@@ -1,0 +1,28 @@
+{
+  "name": "proto-tailwindcss-pixels",
+  "version": "0.0.4",
+  "description": "Tailwind CSS 2.x plugin that generates color classes for CSS variables.",
+  "main": "index.js",
+  "author": "Richard Hess <eswat2@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/eswat2/proto-tailwindcss-clrs.git",
+  "bugs": "https://github.com/eswat2/proto-tailwindcss-clrs/issues",
+  "homepage": "https://github.com/eswat2/proto-tailwindcss-clrs",
+  "scripts": {
+    "format": "prettier --write *.js",
+    "test": "jest",
+    "deploy": "echo -- run [ np patch ]"
+  },
+  "dependencies": {
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "jest": "27.0.4",
+    "jest-matcher-css": "1.1.0",
+    "postcss": "8.3.5",
+    "rollup": "2.52.1",
+    "tailwindcss": "2.2.2"
+  }
+}

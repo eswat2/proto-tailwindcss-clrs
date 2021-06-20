@@ -1,0 +1,44 @@
+#app {
+  --clrs-navy: #001f3f;
+  --clrs-blue: #0074d9;
+  --clrs-aqua: #7fdbff;
+  --clrs-teal: #39cccc;
+  --clrs-olive: #3d9970;
+  --clrs-green: #2ecc40;
+  --clrs-lime: #01ff70;
+  --clrs-yellow: #ffdc00;
+  --clrs-orange: #ff851b;
+  --clrs-red: #ff4136;
+  --clrs-maroon: #85144b;
+  --clrs-fuchsia: #f012be;
+  --clrs-purple: #b10dc9;
+  --clrs-black: #111111;
+  --clrs-gray: #aaaaaa;
+  --clrs-silver: #dddddd;
+
+  --clrs-bada55: #bada55;
+  --clrs-slate: #708090;
+  --clrs-slate4: #4e5964;
+  --clrs-white: #ffffff;
+
+  --clrs-navy-a50: #001f3f50;
+  --clrs-blue-a50: #0074d950;
+  --clrs-aqua-a50: #7fdbff50;
+  --clrs-teal-a50: #39cccc50;
+  --clrs-olive-a50: #3d997050;
+  --clrs-green-a50: #2ecc4050;
+  --clrs-lime-a50: #01ff7050;
+  --clrs-yellow-a50: #ffdc0050;
+  --clrs-orange-a50: #ff851b50;
+  --clrs-red-a50: #ff413650;
+  --clrs-maroon-a50: #85144b50;
+  --clrs-fuchsia-a50: #f012be50;
+  --clrs-purple-a50: #b10dc950;
+  --clrs-black-a50: #11111150;
+  --clrs-gray-a50: #aaaaaa50;
+  --clrs-silver-a50: #dddddd50;
+
+  --clrs-bada55-a50: #bada5550;
+  --clrs-slate-a50: #70809050;
+  --clrs-slate4-a50: #4e596450;
+}
