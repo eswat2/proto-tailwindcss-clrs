@@ -5,7 +5,8 @@
  */
 const plugin = require('tailwindcss/plugin')
 
-const primary = [
+// NOTE:  the base color names come from https://clrs.cc
+const NAMES = [
   'navy',
   'blue',
   'aqua',
@@ -22,23 +23,25 @@ const primary = [
   'black',
   'gray',
   'silver',
-  'bada55',
-  'slate',
-  'slate4',
-  'white',
 ]
 
-const prefix = 'clrs'
-const alpha = ['a50']
+const PREFIX = 'clrs'
 
-const getColors = () => {
+const getColors = (options) => {
   const colorObj = {}
+  const base = options && options['names'] || NAMES
+  const prefix = options && options['prefix'] || PREFIX
+  const extras = options && options['extras'] || []
+  const skip = options && options['skip'] || []
+  const variants = options && options['variants'] || []
 
-  primary.forEach((clr) => {
+  const names = [...base, ...extras]
+
+  names.forEach((clr) => {
     const name = `${prefix}-${clr}`
     colorObj[name] = `var(--${name})`
-    if (clr !== 'white') {
-      alpha.forEach((av) => {
+    if (!skip.includes(clr)) {
+      variants.forEach((av) => {
         const next = `${name}-${av}`
         colorObj[next] = `var(--${next})`
       })
@@ -63,7 +66,7 @@ module.exports = plugin.withOptions(
       },
     }
 
-    const results = getColors()
+    const results = getColors(options)
     output.theme.extend.colors = { ...results }
 
     return output

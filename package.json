@@ -9,7 +9,7 @@
   "bugs": "https://github.com/eswat2/proto-tailwindcss-clrs/issues",
   "homepage": "https://github.com/eswat2/proto-tailwindcss-clrs",
   "scripts": {
-    "format": "prettier --write *.js",
+    "format": "prettier --write *.js cSpell.json",
     "test": "jest",
     "deploy": "echo -- run [ np patch ]"
   },

@@ -27,7 +27,7 @@ module.exports = {
 };
 ```
 
-The above configuration generates colors which use the following CSS variables:
+The default configuration generates colors which use the following CSS variables:
 
 ```css
 #app {
@@ -47,35 +47,10 @@ The above configuration generates colors which use the following CSS variables:
   --clrs-black: #111111;
   --clrs-gray: #aaaaaa;
   --clrs-silver: #dddddd;
-
-  --clrs-bada55: #bada55;
-  --clrs-slate: #708090;
-  --clrs-slate4: #4e5964;
-  --clrs-white: #ffffff;
-
-  --clrs-navy-a50: #001f3f50;
-  --clrs-blue-a50: #0074d950;
-  --clrs-aqua-a50: #7fdbff50;
-  --clrs-teal-a50: #39cccc50;
-  --clrs-olive-a50: #3d997050;
-  --clrs-green-a50: #2ecc4050;
-  --clrs-lime-a50: #01ff7050;
-  --clrs-yellow-a50: #ffdc0050;
-  --clrs-orange-a50: #ff851b50;
-  --clrs-red-a50: #ff413650;
-  --clrs-maroon-a50: #85144b50;
-  --clrs-fuchsia-a50: #f012be50;
-  --clrs-purple-a50: #b10dc950;
-  --clrs-black-a50: #11111150;
-  --clrs-gray-a50: #aaaaaa50;
-  --clrs-silver-a50: #dddddd50;
-
-  --clrs-bada55-a50: #bada5550;
-  --clrs-slate-a50: #70809050;
-  --clrs-slate4-a50: #4e596450;
 }
 ```
-This plugin generates the equivalent of the following:
+
+This plugin by default generates the equivalent of the following:
 
 ```
   theme: {
@@ -97,34 +72,6 @@ This plugin generates the equivalent of the following:
         'clrs-black': 'var(--clrs-black)',
         'clrs-gray': 'var(--clrs-gray)',
         'clrs-silver': 'var(--clrs-silver)',
-
-        'clrs-bada55': 'var(--clrs-bada55)',
-        'clrs-slate': 'var(--clrs-slate)',
-        'clrs-slate4': 'var(--clrs-slate4)',
-        'clrs-white': 'var(--clrs-white)',
-
-        'clrs-navy-a50': 'var(--clrs-navy-a50)',
-        'clrs-blue-a50': 'var(--clrs-blue-a50)',
-        'clrs-aqua-a50': 'var(--clrs-aqua-a50)',
-        'clrs-teal-a50': 'var(--clrs-teal-a50)',
-        'clrs-olive-a50': 'var(--clrs-olive-a50)',
-        'clrs-green-a50': 'var(--clrs-green-a50)',
-        'clrs-lime-a50': 'var(--clrs-lime-a50)',
-        'clrs-yellow-a50': 'var(--clrs-yellow-a50)',
-        'clrs-orange-a50': 'var(--clrs-orange-a50)',
-        'clrs-red-a50': 'var(--clrs-red-a50)',
-        'clrs-maroon-a50': 'var(--clrs-maroon-a50)',
-        'clrs-fuchsia-a50': 'var(--clrs-fuchsia-a50)',
-        'clrs-purple-a50': 'var(--clrs-purple-a50)',
-        'clrs-black-a50': 'var(--clrs-black-a50)',
-        'clrs-gray-a50': 'var(--clrs-gray-a50)',
-        'clrs-silver-a50': 'var(--clrs-silver-a50)',
-
-        'clrs-bada55-a50': 'var(--clrs-bada55-a50)',
-        'clrs-slate-a50': 'var(--clrs-slate-a50)',
-        'clrs-slate4-a50': 'var(--clrs-slate4-a50)',
-      },
-    },
   }
 ```
 
@@ -137,3 +84,70 @@ Which you can then use in your HTML like this:
 ```
 This plugin extends the colors in Tailwind, so these new colors can be used anywhere that colors are normally used in Tailwind...
 
+## Options
+
+The options that you pass to the plugin supports the following properties:
+
+- **prefix** - _the prefix string used for all colors_
+- **names** - _an array of base color names_
+- **extras** - _an array of extra color names_
+- **variants** - _an array of variant names_
+- **skip** - _an array of color names which won't have variants_
+
+The default base colors names where generated from [clrs.cc][clrs-cc].
+
+**example 1**
+
+```
+require('proto-tailwindcss-clrs')({ 
+  names: ['funky'] 
+})
+```
+this configuration generates a single color class: 
+
+```
+clrs-funky
+```
+which requires the following CSS variable:
+
+```
+--clrs-funky
+```
+
+**example 2**
+
+```
+require('proto-tailwindcss-clrs')({ 
+  prefix: 'ds1',
+  names: ['primary', 'secondary'],
+  variants: ['light', 'dark']
+})
+```
+this configuration generates the following color classes:
+
+```
+ds1-primary
+ds1-primary-light
+ds1-primary-dark
+ds1-secondary
+ds1-secondary-light
+ds1-secondary-dark
+```
+and those use the following CSS variables:
+
+```
+--ds1-primary
+--ds1-primary-light
+--ds1-primary-dark
+--ds1-secondary
+--ds1-secondary-light
+--ds1-secondary-dark
+```
+
+## References
+
+- [clrs.cc][clrs-cc] - _A nicer color palette for the web._
+
+
+
+[clrs-cc]: https://clrs.cc
