@@ -1,6 +1,6 @@
 {
-  "name": "proto-tailwindcss-pixels",
-  "version": "0.0.1",
+  "name": "proto-tailwindcss-clrs",
+  "version": "0.0.0",
   "description": "Tailwind CSS 2.x plugin that generates color classes for CSS variables.",
   "main": "index.js",
   "author": "Richard Hess <eswat2@gmail.com>",
