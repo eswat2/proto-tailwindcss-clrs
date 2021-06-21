@@ -1,4 +1,4 @@
-# Pixel Dimensions for Tailwind CSS
+# Custom Colors for Tailwind CSS
 
 This plugin allows you to quickly generate color classes for Tailwind CSS.
 
