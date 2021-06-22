@@ -29,11 +29,11 @@ const PREFIX = 'clrs'
 
 const getColors = (options) => {
   const colorObj = {}
-  const base = options && options['names'] || NAMES
-  const prefix = options && options['prefix'] || PREFIX
-  const extras = options && options['extras'] || []
-  const skip = options && options['skip'] || []
-  const variants = options && options['variants'] || []
+  const base = (options && options['names']) || NAMES
+  const prefix = (options && options['prefix']) || PREFIX
+  const extras = (options && options['extras']) || []
+  const skip = (options && options['skip']) || []
+  const variants = (options && options['variants']) || []
 
   const names = [...base, ...extras]
 
