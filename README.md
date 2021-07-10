@@ -56,22 +56,22 @@ This plugin by default generates the equivalent of the following:
   theme: {
     extend: {
       colors: {
-        'clrs-navy': 'var(--clrs-navy)',
-        'clrs-blue': 'var(--clrs-blue)',
-        'clrs-aqua': 'var(--clrs-aqua)',
-        'clrs-teal': 'var(--clrs-teal)',
-        'clrs-olive': 'var(--clrs-olive)',
-        'clrs-green': 'var(--clrs-green)',
-        'clrs-lime': 'var(--clrs-lime)',
-        'clrs-yellow': 'var(--clrs-yellow)',
-        'clrs-orange': 'var(--clrs-orange)',
-        'clrs-red': 'var(--clrs-red)',
-        'clrs-maroon': 'var(--clrs-maroon)',
-        'clrs-fuchsia': 'var(--clrs-fuchsia)',
-        'clrs-purple': 'var(--clrs-purple)',
-        'clrs-black': 'var(--clrs-black)',
-        'clrs-gray': 'var(--clrs-gray)',
-        'clrs-silver': 'var(--clrs-silver)',
+        'clrs-navy': 'var(--clrs-navy, #001f3f)',
+        'clrs-blue': 'var(--clrs-blue, #0074d9)',
+        'clrs-aqua': 'var(--clrs-aqua, #7fdbff)',
+        'clrs-teal': 'var(--clrs-teal, #39cccc)',
+        'clrs-olive': 'var(--clrs-olive, #3d9970)',
+        'clrs-green': 'var(--clrs-green, #2ecc40)',
+        'clrs-lime': 'var(--clrs-lime, #01ff70)',
+        'clrs-yellow': 'var(--clrs-yellow, #ffdc00)',
+        'clrs-orange': 'var(--clrs-orange, #ff851b)',
+        'clrs-red': 'var(--clrs-red, #ff4136)',
+        'clrs-maroon': 'var(--clrs-maroon, #85144b)',
+        'clrs-fuchsia': 'var(--clrs-fuchsia, #f012be)',
+        'clrs-purple': 'var(--clrs-purple, #b10dc9)',
+        'clrs-black': 'var(--clrs-black, #111111)',
+        'clrs-gray': 'var(--clrs-gray, #aaaaaa)',
+        'clrs-silver': 'var(--clrs-silver, #dddddd)',
   }
 ```
 
@@ -86,7 +86,15 @@ This plugin extends the colors in Tailwind, so these new colors can be used anyw
 
 ## Options
 
-The options that you pass to the plugin supports the following properties:
+The default use case supports the following option properties:
+
+- **prefix** - _the prefix string used for all colors_
+- **map** - _an object of base color names & default values_
+- **alphas** - _an array of 2 digit numbers (ie. 10-99)_
+
+This primary use case generates color definitions with both a css var and a fallback value.
+
+Alternately, if you only want to define color defintions which require css vars, you can use the following option properties:
 
 - **prefix** - _the prefix string used for all colors_
 - **names** - _an array of base color names_
@@ -94,14 +102,35 @@ The options that you pass to the plugin supports the following properties:
 - **variants** - _an array of variant names_
 - **skip** - _an array of color names which won't have variants_
 
-Alternately, you can specify the colors with default values using the following properties:
-
-- **prefix** - _the prefix string used for all colors_
-- **map** - _an object of base color names & default values_
-
-The default base colors names where generated from [clrs.cc][clrs-cc].
+The default base colors names & values where generated from [clrs.cc][clrs-cc].
 
 **example 1**
+
+```
+require('proto-tailwindcss-clrs')({ 
+  prefix: 'ds1',
+  map: {
+    primary: '#f00', 
+    secondary: '#00f',
+  },
+})
+```
+
+this configuration generates the following color classes:
+
+```
+ds1-primary
+ds1-secondary
+```
+
+and those are defined by the following colors:
+
+```
+var(--ds1-primary, #f00)
+var(--ds1-secondary, #00f)
+```
+
+**example 2**
 
 ```
 require('proto-tailwindcss-clrs')({ 
@@ -119,7 +148,7 @@ which requires the following CSS variable:
 --clrs-funky
 ```
 
-**example 2**
+**example 3**
 
 ```
 require('proto-tailwindcss-clrs')({ 
@@ -147,32 +176,6 @@ and those use the following CSS variables:
 --ds1-secondary
 --ds1-secondary-light
 --ds1-secondary-dark
-```
-
-**example 3**
-
-```
-require('proto-tailwindcss-clrs')({ 
-  prefix: 'ds1',
-  map: {
-    primary: '#f00', 
-    secondary: '#00f',
-  },
-})
-```
-
-this configuration generates the following color classes:
-
-```
-ds1-primary
-ds1-secondary
-```
-
-and those are defined by the following colors:
-
-```
-var(--ds1-primary, #f00)
-var(--ds1-secondary, #00f)
 ```
 
 ## References

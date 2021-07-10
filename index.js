@@ -33,7 +33,7 @@ const getColors = (options) => {
   const tags = Object.keys(options)
 
   const colorObj = {}
-  const fallbacks = tags.includes('map') || tags.includes('alphas')
+  const fallbacks = tags.length === 0 || tags.includes('map') || tags.includes('alphas')
 
   const map = (options && options['map']) || {}
   const alphas = (options && options['alphas']) || []
