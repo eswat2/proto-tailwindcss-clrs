@@ -94,6 +94,11 @@ The options that you pass to the plugin supports the following properties:
 - **variants** - _an array of variant names_
 - **skip** - _an array of color names which won't have variants_
 
+Alternately, you can specify the colors with default values using the following properties:
+
+- **prefix** - _the prefix string used for all colors_
+- **map** - _an object of base color names & default values_
+
 The default base colors names where generated from [clrs.cc][clrs-cc].
 
 **example 1**
@@ -142,6 +147,32 @@ and those use the following CSS variables:
 --ds1-secondary
 --ds1-secondary-light
 --ds1-secondary-dark
+```
+
+**example 3**
+
+```
+require('proto-tailwindcss-clrs')({ 
+  prefix: 'ds1',
+  map: {
+    primary: '#f00', 
+    secondary: '#00f',
+  },
+})
+```
+
+this configuration generates the following color classes:
+
+```
+ds1-primary
+ds1-secondary
+```
+
+and those are defined by the following colors:
+
+```
+var(--ds1-primary, #f00)
+var(--ds1-secondary, #00f)
 ```
 
 ## References
