@@ -33,7 +33,8 @@ const getColors = (options) => {
   const tags = Object.keys(options)
 
   const colorObj = {}
-  const fallbacks = tags.length === 0 || tags.includes('map') || tags.includes('alphas')
+  const fallbacks =
+    tags.length === 0 || tags.includes('map') || tags.includes('alphas')
 
   const map = (options && options['map']) || {}
   const alphas = (options && options['alphas']) || []
@@ -45,7 +46,7 @@ const getColors = (options) => {
   const variants = (options && options['variants']) || []
 
   if (fallbacks) {
-    const dict = prefix === PREFIX ? { ...COLOR_MAP, ...map} : map
+    const dict = prefix === PREFIX ? { ...COLOR_MAP, ...map } : map
     const keys = Object.keys(dict)
 
     keys.forEach((key) => {

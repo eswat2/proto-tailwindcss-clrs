@@ -36,12 +36,16 @@ const generatePluginCss = (config, pluginOptions = {}) => {
 }
 
 const debugClrs = (css) => {
-  const vars = css.match(/var\(--clrs-[a-z]*[1-9]*(-a[0-9]*)?(, #[a-f]*[0-9]*)?\)/g)
+  const vars = css.match(
+    /var\(--clrs-[a-z]*[1-9]*(-a[0-9]*)?(, #[a-f]*[0-9]*)?\)/g
+  )
   console.log(vars)
 }
 
 const debugDs1 = (css) => {
-  const vars = css.match(/var\(--ds1-[a-z]*[1-9]*(-a[0-9]*)?(-(?:light|dark))?(, #[a-f]*[0-9]*)?\)/g)
+  const vars = css.match(
+    /var\(--ds1-[a-z]*[1-9]*(-a[0-9]*)?(-(?:light|dark))?(, #[a-f]*[0-9]*)?\)/g
+  )
   console.log(vars)
 }
 
@@ -212,7 +216,11 @@ test('map can define vars and default colors with alphas', () => {
     expect(tags.length).toEqual(40)
 
     expect(list).toEqual(
-      expect.arrayContaining(['.text-clrs-red-a50', '.text-clrs-bada55', '.text-clrs-bada55-a50'])
+      expect.arrayContaining([
+        '.text-clrs-red-a50',
+        '.text-clrs-bada55',
+        '.text-clrs-bada55-a50',
+      ])
     )
     expect(list.length).toEqual(360)
   })
