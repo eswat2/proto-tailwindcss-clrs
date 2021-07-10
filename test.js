@@ -187,14 +187,14 @@ test('map can define vars and default colors with alphas', () => {
     const total = css.match(/--clrs-[a-z]*[1-9]*(-(?:a50))?/g)
     const tags = Array.from(new Set(total))
     const list = css.match(/\.[a-z]*-clrs-[a-z]*[1-9]*(-(?:a50))?/g)
-    const results = ['--clrs-bada55', '--clrs-bada55-a50']
+    const results = ['--clrs-navy', '--clrs-bada55', '--clrs-bada55-a50']
 
     expect(tags).toEqual(expect.arrayContaining(results))
-    expect(tags.length).toEqual(8)
+    expect(tags.length).toEqual(40)
 
     expect(list).toEqual(
-      expect.arrayContaining(['.text-clrs-bada55', '.text-clrs-bada55-a50'])
+      expect.arrayContaining(['.text-clrs-red-a50', '.text-clrs-bada55', '.text-clrs-bada55-a50'])
     )
-    expect(list.length).toEqual(72)
+    expect(list.length).toEqual(360)
   })
 })
