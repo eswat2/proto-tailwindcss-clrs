@@ -5,7 +5,15 @@
   // language - current active spelling language
   "language": "en",
   // words - list of words to be always considered correct
-  "words": ["clrs", "eswat", "postcss", "proto", "predeploy", "tailwindcss"],
+  "words": [
+    "clrs",
+    "colr",
+    "eswat",
+    "postcss",
+    "proto",
+    "predeploy",
+    "tailwindcss"
+  ],
   "ignorePaths": [
     "public/build/**",
     "node_modules/**",

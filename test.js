@@ -158,22 +158,43 @@ test('map can define vars and default colors', () => {
   return generatePluginCss(null, {
     prefix: 'ds1',
     map: {
-      'primary': '#ff0000'
+      primary: '#ff0000',
     },
   }).then((css) => {
-    const vars = css.match(/var\(--ds1-.*\)/g)
-    const total = css.match(/--ds1-[a-z]*[1-9]*(-(?:light|dark))?/g)
+    const total = css.match(/--ds1-[a-z]*[1-9]*/g)
     const tags = Array.from(new Set(total))
-    const list = css.match(/\.[a-z]*-ds1-[a-z]*[1-9]*(-(?:light|dark))?/g)
-    const results = [
-      '--ds1-primary',
-    ]
-    console.log(vars)
+    const list = css.match(/\.[a-z]*-ds1-[a-z]*[1-9]*/g)
+    const results = ['--ds1-primary']
 
     expect(tags).toEqual(expect.arrayContaining(results))
     expect(tags.length).toEqual(1)
 
     expect(list).toEqual(expect.arrayContaining(['.text-ds1-primary']))
     expect(list.length).toEqual(9)
+  })
+})
+
+test('map can define vars and default colors with alphas', () => {
+  return generatePluginCss(null, {
+    map: {
+      bada55: 'bada55',
+      slate: '708090',
+      slate4: '4e5964',
+      white: 'ffffff',
+    },
+    alphas: [50],
+  }).then((css) => {
+    const total = css.match(/--clrs-[a-z]*[1-9]*(-(?:a50))?/g)
+    const tags = Array.from(new Set(total))
+    const list = css.match(/\.[a-z]*-clrs-[a-z]*[1-9]*(-(?:a50))?/g)
+    const results = ['--clrs-bada55', '--clrs-bada55-a50']
+
+    expect(tags).toEqual(expect.arrayContaining(results))
+    expect(tags.length).toEqual(8)
+
+    expect(list).toEqual(
+      expect.arrayContaining(['.text-clrs-bada55', '.text-clrs-bada55-a50'])
+    )
+    expect(list.length).toEqual(72)
   })
 })
