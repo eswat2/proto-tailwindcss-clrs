@@ -30,23 +30,34 @@ const PREFIX = 'clrs'
 const getColors = (options) => {
   const colorObj = {}
   const base = (options && options['names']) || NAMES
+  const map = (options && options['map']) || undefined
   const prefix = (options && options['prefix']) || PREFIX
   const extras = (options && options['extras']) || []
   const skip = (options && options['skip']) || []
   const variants = (options && options['variants']) || []
 
-  const names = [...base, ...extras]
+  if (map) {
+    const keys = Object.keys(map)
 
-  names.forEach((clr) => {
-    const name = `${prefix}-${clr}`
-    colorObj[name] = `var(--${name})`
-    if (!skip.includes(clr)) {
-      variants.forEach((av) => {
-        const next = `${name}-${av}`
-        colorObj[next] = `var(--${next})`
-      })
-    }
-  })
+    keys.forEach((key) => {
+      const name = `${prefix}-${key}`
+      const value = map[key];
+      colorObj[name] = value ? `var(--${name}, ${value})` : `var(--${name})`
+    })
+  } else {
+    const names = [...base, ...extras]
+
+    names.forEach((clr) => {
+      const name = `${prefix}-${clr}`
+      colorObj[name] = `var(--${name})`
+      if (!skip.includes(clr)) {
+        variants.forEach((av) => {
+          const next = `${name}-${av}`
+          colorObj[next] = `var(--${next})`
+        })
+      }
+    })
+  }
 
   return colorObj
 }
