@@ -177,10 +177,10 @@ test('map can define vars and default colors', () => {
 test('map can define vars and default colors with alphas', () => {
   return generatePluginCss(null, {
     map: {
-      bada55: 'bada55',
-      slate: '708090',
-      slate4: '4e5964',
-      white: 'ffffff',
+      bada55: '#bada55',
+      slate: '#708090',
+      slate4: '#4e5964',
+      white: '#ffffff',
     },
     alphas: [50],
   }).then((css) => {
