@@ -77,24 +77,27 @@ const getColors = (options) => {
   return colorObj
 }
 
+const generate = (options) => {
+  const output = {
+    theme: {
+      extend: {
+        colors: {},
+      },
+    },
+  }
+
+  const results = getColors(options)
+  output.theme.extend.colors = { ...results }
+  return output
+}
+
 module.exports = plugin.withOptions(
-  function (options) {
-    return function ({ addUtilities, e, variants, theme }) {
+  function (_options) {
+    return function () {
       // ...
     }
   },
   function (options) {
-    const output = {
-      theme: {
-        extend: {
-          colors: {},
-        },
-      },
-    }
-
-    const results = getColors(options)
-    output.theme.extend.colors = { ...results }
-
-    return output
+    return generate(options)
   }
 )
