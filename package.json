@@ -8,7 +8,7 @@
   "repository": "https://github.com/eswat2/proto-tailwindcss-clrs.git",
   "bugs": "https://github.com/eswat2/proto-tailwindcss-clrs/issues",
   "homepage": "https://github.com/eswat2/proto-tailwindcss-clrs",
-  "private": true,
+  "private": false,
   "scripts": {
     "format": "prettier --write *.js cSpell.json",
     "test": "jest",
