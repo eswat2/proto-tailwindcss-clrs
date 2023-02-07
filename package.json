@@ -12,7 +12,7 @@
   "scripts": {
     "format": "prettier --write *.js cSpell.json",
     "test": "jest",
-    "deploy": "echo -- run [ np patch ]"
+    "deploy": "yarn test; echo -- run [ np patch ]"
   },
   "dependencies": {},
   "publishConfig": {
