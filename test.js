@@ -1,5 +1,5 @@
 const postcss = require('postcss')
-const tailwindcss = require('tailwindcss')
+const tailwindcss = require('@tailwindcss/postcss')
 
 /**
  * generatePluginCss
