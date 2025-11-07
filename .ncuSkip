@@ -1,1 +1,1 @@
--x tailwindcss
+-x tailwindcss -x rollup
