@@ -1,6 +1,6 @@
 {
   "name": "proto-tailwindcss-clrs",
-  "version": "0.0.465",
+  "version": "0.0.466",
   "description": "Tailwind CSS 3.x plugin that generates color classes for CSS variables.",
   "main": "index.js",
   "author": "Richard Hess <eswat2@gmail.com>",
@@ -14,7 +14,7 @@
   "private": false,
   "scripts": {
     "bump": "bumpp patch --yes",
-    "release": "pnpm bump && pnpm build && pnpm test && pnpm publish",
+    "release": "pnpm bump && pnpm test && pnpm publish",
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write *.js cSpell.json",
     "test": "jest"
