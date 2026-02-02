@@ -1,6 +1,6 @@
 {
   "name": "proto-tailwindcss-clrs",
-  "version": "0.0.464",
+  "version": "0.0.465",
   "description": "Tailwind CSS 3.x plugin that generates color classes for CSS variables.",
   "main": "index.js",
   "author": "Richard Hess <eswat2@gmail.com>",
@@ -13,21 +13,25 @@
   },
   "private": false,
   "scripts": {
+    "bump": "bumpp patch --yes",
+    "release": "pnpm bump && pnpm build && pnpm test && pnpm publish",
+    "preinstall": "npx only-allow pnpm",
     "format": "prettier --write *.js cSpell.json",
-    "test": "jest",
-    "deploy": "yarn test; echo -- run [ np patch ]"
+    "test": "jest"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
     "autoprefixer": "10.4.24",
+    "bumpp": "10.4.0",
     "jest": "30.2.0",
     "jest-matcher-css": "1.1.0",
     "lodash": "4.17.23",
+    "only-allow": "1.2.2",
     "postcss": "8.5.6",
     "rollup": "4.57.1",
-    "tailwindcss": "3.4.17"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+    "tailwindcss": "3.4.17",
+    "yoctocolors": "2.1.2"
+  }
 }
