@@ -13,7 +13,7 @@
   },
   "private": false,
   "scripts": {
-    "bump": "bumpp patch --yes",
+    "bump": "bumpp patch --commit --tag --push --yes",
     "release": "pnpm bump && pnpm test && pnpm publish",
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write *.js cSpell.json",
