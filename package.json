@@ -15,6 +15,7 @@
   "scripts": {
     "bump": "bumpp patch --commit --tag --push --yes",
     "release": "pnpm bump && pnpm test && pnpm publish",
+    "build": "echo --skip",
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write *.js cSpell.json",
     "test": "jest"
@@ -24,7 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "10.5.0",
-    "bumpp": "11.0.1",
+    "bumpp": "11.1.0",
     "jest": "30.3.0",
     "jest-matcher-css": "1.1.0",
     "only-allow": "1.2.2",
@@ -32,5 +33,6 @@
     "rollup": "4.60.3",
     "tailwindcss": "3.4.17",
     "yoctocolors": "2.1.2"
-  }
+  },
+  "packageManager": "pnpm@11.0.8+sha512.4c4097e1dd2d42372c4e7fa5a791ff28fc75a484c7ac192e64b1df0fdef17594ba982f9b4fed9adfb3c757846f565b799b2763fb3733d1de1bcb82cf46684912"
 }
