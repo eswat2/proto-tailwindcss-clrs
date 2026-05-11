@@ -1,4 +1,7 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
 allowBuilds:
-  unrs-resolver: true
-onlyBuiltDependencies:
-  - unrs-resolver
+  'esbuild': true
+  'proto-tailwindcss-clrs': true
