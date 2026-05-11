@@ -4,4 +4,4 @@ packages:
 
 allowBuilds:
   'esbuild': true
-  'proto-tailwindcss-clrs': true
+  'unrs-resolver': true
