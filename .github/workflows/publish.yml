@@ -8,6 +8,9 @@ on:
 
 jobs:
   publish:
+    permissions:
+      contents: read
+      id-token: write
     uses: eswat2/.github/.github/workflows/npm-publish-reusable.yml@main
     with:
       node-version: '22'
