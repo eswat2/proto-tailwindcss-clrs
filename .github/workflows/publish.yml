@@ -1,0 +1,18 @@
+# .github/workflows/publish.yml
+name: Publish package
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  publish:
+    uses: eswat2/.github/.github/workflows/npm-publish-reusable.yml@main
+    with:
+      node-version: '22'
+      run-tests: true
+      run-build: true
+      run-card: false
+      publish-command: 'npm publish --access public --provenance'
+    # no secrets: NPM_PUBLISH_TOKEN here
