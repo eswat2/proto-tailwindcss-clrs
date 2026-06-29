@@ -7,4 +7,4 @@ allowBuilds:
   'unrs-resolver': true
 
 minimumReleaseAgeExclude:
-  - autoprefixer@10.5.2
+  - postcss@8.5.16
