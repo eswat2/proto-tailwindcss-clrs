@@ -29,10 +29,10 @@
     "jest": "30.4.2",
     "jest-matcher-css": "1.1.0",
     "only-allow": "1.2.2",
-    "postcss": "8.5.16",
+    "postcss": "8.5.17",
     "rollup": "4.62.2",
     "tailwindcss": "3.4.17",
     "yoctocolors": "2.1.2"
   },
-  "packageManager": "pnpm@11.11.0+sha512.4463f65fd80ed80d69bc1d4bf163ee94f605c7380fc318bb5b2ebe15f8cd12d49c51a4d59e951b401e764d3b6ca751cbf51bc50ed7001a6bcb4935e684c34882"
+  "packageManager": "pnpm@11.12.0+sha512.820a6fbd0d9f04c226638002aead1e45340a9139dd5dc077c1d83ef44aa2481c8eb6637b4c9aa696a3c7e35ba818e49cf27213e5f2b91138d09b7a3e26e898ba"
 }
