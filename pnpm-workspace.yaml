@@ -7,4 +7,4 @@ allowBuilds:
   'unrs-resolver': true
 
 minimumReleaseAgeExclude:
-  - postcss@8.5.17
+  - postcss@8.5.19
