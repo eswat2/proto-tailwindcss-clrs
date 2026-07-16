@@ -7,4 +7,5 @@ allowBuilds:
   'unrs-resolver': true
 
 minimumReleaseAgeExclude:
-  - autoprefixer@10.5.3
+  - autoprefixer@10.5.4
+  - caniuse-lite@1.0.30001806
