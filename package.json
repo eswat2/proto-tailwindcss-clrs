@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "10.5.4",
-    "bumpp": "12.2.1",
+    "bumpp": "12.2.2",
     "jest": "30.4.2",
     "jest-matcher-css": "1.1.0",
     "only-allow": "1.2.2",
