@@ -8,5 +8,6 @@ allowBuilds:
   'unrs-resolver': true
 
 minimumReleaseAgeExclude:
-  - bumpp@12.3.0
-  - postcss@8.5.27
+  - autoprefixer@10.5.5
+  - browserslist@4.28.9
+  - postcss@8.5.28
