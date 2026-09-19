@@ -5,7 +5,10 @@
   "main": "index.js",
   "author": "Richard Hess <eswat2@gmail.com>",
   "license": "ISC",
-  "repository": "https://github.com/eswat2/proto-tailwindcss-clrs.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eswat2/proto-tailwindcss-clrs.git"
+  },
   "bugs": "https://github.com/eswat2/proto-tailwindcss-clrs/issues",
   "homepage": "https://github.com/eswat2/proto-tailwindcss-clrs",
   "engines": {
